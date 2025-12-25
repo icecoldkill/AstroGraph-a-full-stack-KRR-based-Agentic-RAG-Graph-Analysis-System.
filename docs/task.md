@@ -1,0 +1,37 @@
+# Task: KRR Course Project - Global Space Exploration Knowledge Graph
+
+## M1: Domain & Dataset Selection [x]
+- [x] Research and select a non-RDF dataset from Kaggle or similar.
+- [x] Verify the dataset is not already published as Linked Data.
+- [x] Define motivation and context for the selected dataset.
+- [x] Identify potential for interlinking (DBpedia, Wikidata).
+
+## M2: Competency Questions & Conceptual Model [x]
+- [x] Formulate at least 5-10 competency questions.
+- [x] Design the Conceptual Model (T-Box and A-Box examples).
+- [x] Identify existing vocabularies to reuse (e.g., Schema.org, FOAF, DBPedia-Ontology).
+
+## M3: Ontology Design & Reasoning [x]
+- [x] Design the Ontology in Protege/Python (20+ classes, 7+ object properties, 7+ datatype properties).
+- [x] Implement specific restrictions (Enumeration, Cardinality, Range, Union, Intersection, Complement).
+- [x] Define Functional and Inverse Functional properties.
+- [x] Perform consistency checking and reasoning.
+- [x] Annotate at least 10 individuals.
+
+## M4: Data Conversion & Linking [x]
+- [x] Develop Python scripts (RDFLib) to map CSV to RDF/OWL.
+- [x] Devise a meaningful URI mechanism.
+- [x] Implement interlinking with DBpedia/Wikidata.
+- [x] Publish as Linked Data (simulated or via GraphDB).
+
+## M5: Validation & Visualization [x]
+- [x] Execute SPARQL queries based on competency questions.
+- [x] Visualize the RDF data (VOWL or similar).
+- [x] Create walkthrough and final report.
+
+## M6: Agentic GraphRAG & UI Extension [x]
+- [x] Install Groq, Streamlit, and LangChain/LlamaIndex dependencies.
+- [x] Implement `src/graph_rag_engine.py` for SPARQL generation and Vector retrieval.
+- [x] Develop `src/app.py` with Streamlit (Chat UI + Visualization).
+- [x] Integrate document upload and dynamic RDF/Vector enrichment.
+- [x] Deploy and verify with custom datasets.

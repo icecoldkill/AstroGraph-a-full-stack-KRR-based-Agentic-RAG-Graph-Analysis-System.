@@ -1,0 +1,14 @@
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+PREFIX ex: <http://krr.org/space/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?agency (SUM(?budget) AS ?totalBudget) (COUNT(?mission) AS ?missionCount)
+WHERE {
+    ?mission rdf:type onto:SpaceMission .
+    ?mission onto:launchedBy ?agency .
+    ?mission onto:hasBudget ?budget .
+}
+GROUP BY ?agency
+ORDER BY DESC(?totalBudget)
+LIMIT 5
+

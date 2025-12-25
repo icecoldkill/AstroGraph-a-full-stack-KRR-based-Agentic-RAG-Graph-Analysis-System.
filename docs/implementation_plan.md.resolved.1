@@ -1,0 +1,49 @@
+# Implementation Plan - Global Space Exploration Knowledge Graph
+
+## Goal
+Build a comprehensive Knowledge Graph (KG) of global space exploration by converting non-RDF data (CSV) from Kaggle into RDF/OWL, interlinking it with the Linked Open Data (LOD) cloud, and validating it via SPARQL and reasoning.
+
+## User Review Required
+> [!IMPORTANT]
+> I have selected the **"Global Space Exploration Dataset"** and **"All Space Missions from 1957"** as the primary data sources. They provide rich details on budgets, mission outcomes, and agencies that are often fragmented in existing LOD sets like DBpedia.
+
+## Competency Questions
+The following questions will be used to validate the Knowledge Graph:
+1. **Budget Analysis**: Which agencies have launched missions with a budget exceeding $1 Billion?
+2. **Success Rates**: What is the success rate of the 'Falcon 9' rocket vs other 'Heavy' class rockets?
+3. **Exploration Targets**: Which countries have successfully launched missions to 'Mars' or 'Moon'?
+4. **Entity Comparison**: Do 'PrivateCompanies' have a higher success rate than 'GovernmentAgencies' in the 2020-2025 period?
+5. **Site Activity**: What are the most common 'SatelliteTypes' launched from specific 'LaunchSites' (e.g., Kennedy Space Center)?
+6. **Operational Status**: List all 'Active' rockets and their corresponding 'Agencies'.
+7. **Environmental Impact**: Which mission types have the highest 'EnvironmentalImpact' score? (Based on the selected dataset).
+
+## Proposed Changes
+
+### [Ontology Design]
+Define a custom ontology in the `ontology/space_exploration.owl` file that meets all project requirements:
+- **Classes (20+):** `Agency`, `SpaceMission`, `Rocket`, `Satellite`, `Payload`, `LaunchSite`, `Astronaut`, `Orbit`, `LaunchVehicle`, `GovernmentAgency`, `PrivateCompany`, `CrewedMission`, `UncrewedMission`, `MoonMission`, `MarsMission`, `SatelliteType`, `MissionSuccessStatus`, `Country`, `Continent`, `SpacePort`.
+- **Properties (7+ Object, 7+ Datatype):**
+  - Object: `launchedBy`, `launchedFrom`, `carriedPayload`, `hasOrbit`, `isSuccess`, `inverseOfLaunchedBy`.
+  - Datatype: `hasBudget`, `launchDate`, `missionCost`, `rocketStatus`, `payloadWeight`, `agencyFoundingDate`.
+- **Axioms:** Enumeration for `LaunchStatus`, Cardinality for `Rocket` stages, Range for `hasBudget`, Union for `LaunchEntity` (Agency | Company).
+
+### [Data Conversion]
+- **File:** `src/convert_to_rdf.py`
+- Use `pandas` to read CSVs and `rdflib` to generate triples.
+- Implement a URI strategy: `http://krr.org/space/agency/{name}`, `http://krr.org/space/mission/{id}`.
+
+### [Linking & Publishing]
+- **File:** `src/link_data.py`
+- Use SPARQL and string matching to link agencies to `dbpedia:SpaceAgency` and countries to `wikidata:Country`.
+
+## Verification Plan
+
+### Automated Tests
+1. **Ontology Consistency**: Use `owlready2` or Protege's HermiT/Pellet reasoner to verify the ontology.
+   - Command: `python src/check_consistency.py`
+2. **SPARQL Validation**: Run queries in `queries/competency_questions.sparql` against the generated RDF.
+   - Command: `python src/run_queries.py`
+
+### Manual Verification
+1. **Visualization**: Load the RDF into GraphDB or use VOWL to visualize the graph structure.
+2. **Individual Check**: Manually inspect `ontology/individuals.owl` to ensure axioms are correctly applied to individuals.

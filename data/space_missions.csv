@@ -1,0 +1,11 @@
+mission_id,mission_name,agency,agency_type,nation,launch_site,mission_type,rocket,payload_weight,budget,launch_date,status,environmental_impact
+1,Apollo 11,NASA,Government,USA,Kennedy Space Center,Moon,Saturn V,45000,25000,1969-07-16,Success,8
+2,Falcon 9 Launch,SpaceX,Private,USA,Cape Canaveral,Earth Observation,Falcon 9,22800,62,2023-05-01,Success,3
+3,Mars Rover Perseverance,NASA,Government,USA,Kennedy Space Center,Mars,Atlas V,1025,2700,2020-07-30,Success,5
+4,Chandrayaan-3,ISRO,Government,India,Satish Dhawan Space Centre,Moon,LVM3,3900,75,2023-07-14,Success,4
+5,Starlink-105,SpaceX,Private,USA,Kennedy Space Center,Earth Observation,Falcon 9,15000,50,2024-01-10,Success,3
+6,Voyager 1,NASA,Government,USA,Cape Canaveral,Interstellar,Titan IIIE,722,250,1977-09-05,Success,7
+7,Artemis I,NASA,Government,USA,Kennedy Space Center,Moon,SLS,95000,4100,2022-11-16,Success,9
+8,Soyuz MS-24,Roscosmos,Government,Russia,Baikonur Cosmodrome,ISS,Soyuz-2,7000,150,2023-09-15,Success,6
+9,Tianwen-1,CNSA,Government,China,Wenchang,Mars,Long March 5,5000,8000,2020-07-23,Success,8
+10,Beresheet,SpaceIL,Private,Israel,Cape Canaveral,Moon,Falcon 9,585,100,2019-02-22,Failure,3

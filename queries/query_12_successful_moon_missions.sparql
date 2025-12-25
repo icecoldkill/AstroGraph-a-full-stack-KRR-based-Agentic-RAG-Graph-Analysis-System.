@@ -1,0 +1,11 @@
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+PREFIX ex: <http://krr.org/space/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Query for SuccessfulMoonMission (defined class: intersection of MoonMission and Success)
+SELECT ?mission ?missionName
+WHERE {
+    ?mission rdf:type onto:SuccessfulMoonMission .
+    ?mission onto:missionName ?missionName .
+}
+

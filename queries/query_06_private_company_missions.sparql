@@ -1,0 +1,12 @@
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+PREFIX ex: <http://krr.org/space/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?mission ?missionName ?company
+WHERE {
+    ?mission rdf:type onto:SpaceMission .
+    ?mission onto:missionName ?missionName .
+    ?mission onto:launchedBy ?company .
+    ?company rdf:type onto:PrivateCompany .
+}
+

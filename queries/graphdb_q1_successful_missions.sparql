@@ -1,0 +1,11 @@
+# Competency Question 1: List all successful space missions
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+
+SELECT ?missionName ?launchDate ?budget
+WHERE {
+    ?mission onto:missionName ?missionName .
+    ?mission onto:launchDate ?launchDate .
+    OPTIONAL { ?mission onto:hasBudget ?budget }
+    ?mission onto:isSuccess onto:Success .
+}
+ORDER BY ?launchDate

@@ -1,0 +1,11 @@
+# Competency Question 2: List all failed space missions
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+
+SELECT ?missionName ?launchDate ?agency
+WHERE {
+    ?mission onto:missionName ?missionName .
+    ?mission onto:launchDate ?launchDate .
+    ?mission onto:launchedBy ?a .
+    OPTIONAL { ?a onto:agencyName ?agency }
+    ?mission onto:isSuccess onto:Failure .
+}

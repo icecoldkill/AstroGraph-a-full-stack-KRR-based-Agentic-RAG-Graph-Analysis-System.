@@ -1,0 +1,14 @@
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+PREFIX ex: <http://krr.org/space/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+
+# Query to find agencies linked to DBpedia via owl:sameAs
+SELECT ?agency ?dbpediaResource
+WHERE {
+    ?agency rdf:type onto:Agency .
+    ?agency owl:sameAs ?dbpediaResource .
+    FILTER (regex(str(?dbpediaResource), "dbpedia", "i"))
+}
+

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:onto="http://krr.org/space_exploration.owl#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://krr.org/space/mission_5">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Starlink-105</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-10</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_SpaceX"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Kennedy_Space_Center"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_1">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apollo 11</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25000</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1969-07-16</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_NASA"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Kennedy_Space_Center"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_3">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MarsMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mars Rover Perseverance</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2700</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-07-30</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_NASA"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Kennedy_Space_Center"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_7">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artemis I</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4100</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-16</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_NASA"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Kennedy_Space_Center"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_4">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chandrayaan-3</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">75</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-07-14</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_ISRO"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Satish_Dhawan_Space_Centre"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_6">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Voyager 1</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">250</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1977-09-05</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_NASA"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Cape_Canaveral"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_10">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beresheet</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-02-22</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Failure"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_SpaceIL"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Cape_Canaveral"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/rocket_Falcon_9">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_SpaceX"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_SpaceIL"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/rocket_LVM3">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_ISRO"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_9">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MarsMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tianwen-1</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8000</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-07-23</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_CNSA"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Wenchang"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/rocket_SLS">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_8">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Soyuz MS-24</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-09-15</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_Roscosmos"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Baikonur_Cosmodrome"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/agency_ISRO">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Indian_Space_Research_Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/agency_NASA">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/rocket_Saturn_V">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/mission_2">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <onto:missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Falcon 9 Launch</onto:missionName>
+    <onto:hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">62</onto:hasBudget>
+    <onto:launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-05-01</onto:launchDate>
+    <onto:environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</onto:environmentalImpact>
+    <onto:isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <onto:launchedBy rdf:resource="http://krr.org/space/agency_SpaceX"/>
+    <onto:launchedFrom rdf:resource="http://krr.org/space/site_Cape_Canaveral"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/agency_SpaceX">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#PrivateCompany"/>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/SpaceX"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/agency_Roscosmos">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Roscosmos"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/rocket_Long_March_5">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_CNSA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/rocket_Titan_IIIE">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/rocket_Atlas_V">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/agency_SpaceIL">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#PrivateCompany"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/rocket_Soyuz-2">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <onto:hasAgency rdf:resource="http://krr.org/space/agency_Roscosmos"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space/agency_CNSA">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+  </rdf:Description>
+</rdf:RDF>

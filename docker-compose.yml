@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  graphdb:
+    image: ontotext/graphdb:10.4.0
+    container_name: krr-graphdb
+    ports:
+      - "7200:7200"
+    volumes:
+      - ./graphdb-data:/opt/graphdb/home
+      - ./graphdb-import:/root/graphdb-import
+    environment:
+      - GDB_HEAP_SIZE=2G
+      - GDB_JAVA_OPTS=-Dgraphdb.health.minimal.free.storage.enabled=false -Dgraphdb.health.minimal.free.storage.asyncCheck=false -Dgraphdb.storage.threshold=0 -Dgraphdb.storage.threshold.fatal=0
+    restart: unless-stopped
+
+# GraphDB Workbench will be available at: http://localhost:7200
+# Steps after starting:
+# 1. docker-compose up -d
+# 2. Open http://localhost:7200
+# 3. Create a new repository named "space-missions"
+# 4. Import the RDF file from /root/graphdb-import/space_data.rdf

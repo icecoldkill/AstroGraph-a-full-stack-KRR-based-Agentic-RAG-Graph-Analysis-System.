@@ -1,0 +1,298 @@
+{
+  "total": 31,
+  "successful": 18,
+  "failed": 1,
+  "empty": 12,
+  "details": [
+    {
+      "query_id": "query_01_all_missions",
+      "status": "success",
+      "result_count": 10,
+      "variables": [
+        "mission",
+        "missionName"
+      ]
+    },
+    {
+      "query_id": "query_02_mission_budget",
+      "status": "success",
+      "result_count": 1,
+      "variables": [
+        "mission",
+        "missionName",
+        "budget"
+      ]
+    },
+    {
+      "query_id": "query_03_missions_by_agency",
+      "status": "success",
+      "result_count": 4,
+      "variables": [
+        "mission",
+        "missionName",
+        "agency"
+      ]
+    },
+    {
+      "query_id": "query_04_moon_missions_dates",
+      "status": "success",
+      "result_count": 4,
+      "variables": [
+        "mission",
+        "missionName",
+        "launchDate"
+      ]
+    },
+    {
+      "query_id": "query_05_government_agencies",
+      "status": "success",
+      "result_count": 4,
+      "variables": [
+        "agency"
+      ]
+    },
+    {
+      "query_id": "query_06_private_company_missions",
+      "status": "success",
+      "result_count": 3,
+      "variables": [
+        "mission",
+        "missionName",
+        "company"
+      ]
+    },
+    {
+      "query_id": "query_07_agency_countries",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "agency",
+        "country"
+      ]
+    },
+    {
+      "query_id": "query_08_high_budget_missions",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName",
+        "budget"
+      ]
+    },
+    {
+      "query_id": "query_09_total_budget_successful",
+      "status": "success",
+      "result_count": 1,
+      "variables": [
+        "totalBudget",
+        "missionCount"
+      ]
+    },
+    {
+      "query_id": "query_10_agency_highest_budget",
+      "status": "success",
+      "result_count": 5,
+      "variables": [
+        "agency",
+        "totalBudget",
+        "missionCount"
+      ]
+    },
+    {
+      "query_id": "query_11_successful_missions",
+      "status": "success",
+      "result_count": 9,
+      "variables": [
+        "mission",
+        "missionName"
+      ]
+    },
+    {
+      "query_id": "query_12_successful_moon_missions",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName"
+      ]
+    },
+    {
+      "query_id": "query_13_failed_missions",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName"
+      ]
+    },
+    {
+      "query_id": "query_14_missions_from_site",
+      "status": "success",
+      "result_count": 4,
+      "variables": [
+        "mission",
+        "missionName",
+        "launchSite"
+      ]
+    },
+    {
+      "query_id": "query_15_launch_site_counts",
+      "status": "success",
+      "result_count": 5,
+      "variables": [
+        "launchSite",
+        "missionCount"
+      ]
+    },
+    {
+      "query_id": "query_16_crewed_missions",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName"
+      ]
+    },
+    {
+      "query_id": "query_17_mars_missions",
+      "status": "success",
+      "result_count": 2,
+      "variables": [
+        "mission",
+        "missionName",
+        "launchDate"
+      ]
+    },
+    {
+      "query_id": "query_18_interstellar_missions",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName",
+        "launchDate"
+      ]
+    },
+    {
+      "query_id": "query_19_high_environmental_impact",
+      "status": "success",
+      "result_count": 10,
+      "variables": [
+        "mission",
+        "missionName",
+        "environmentalImpact"
+      ]
+    },
+    {
+      "query_id": "query_1_high_budget",
+      "status": "success",
+      "result_count": 4,
+      "variables": [
+        "mission",
+        "budget"
+      ]
+    },
+    {
+      "query_id": "query_20_avg_environmental_impact",
+      "status": "success",
+      "result_count": 6,
+      "variables": [
+        "agency",
+        "avgImpact",
+        "missionCount"
+      ]
+    },
+    {
+      "query_id": "query_21_reusable_rockets",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "rocket",
+        "agency"
+      ]
+    },
+    {
+      "query_id": "query_22_payload_weights",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName",
+        "payload",
+        "weight"
+      ]
+    },
+    {
+      "query_id": "query_23_missions_2023",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName",
+        "launchDate"
+      ]
+    },
+    {
+      "query_id": "query_24_moon_missions_chronological",
+      "status": "success",
+      "result_count": 4,
+      "variables": [
+        "mission",
+        "missionName",
+        "launchDate"
+      ]
+    },
+    {
+      "query_id": "query_25_federated_dbpedia_agencies",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "agency",
+        "dbpediaResource"
+      ]
+    },
+    {
+      "query_id": "query_26_federated_nasa_info",
+      "status": "error",
+      "error": "Federated queries (SERVICE) not fully supported by RDFLib. Use GraphDB/Virtuoso for full support."
+    },
+    {
+      "query_id": "query_27_commercial_space_flights",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName",
+        "company"
+      ]
+    },
+    {
+      "query_id": "query_28_non_government_missions",
+      "status": "empty",
+      "result_count": 0,
+      "variables": [
+        "mission",
+        "missionName",
+        "agency"
+      ]
+    },
+    {
+      "query_id": "query_2_moon_missions",
+      "status": "success",
+      "result_count": 3,
+      "variables": [
+        "mission",
+        "name"
+      ]
+    },
+    {
+      "query_id": "query_3_private_agencies",
+      "status": "success",
+      "result_count": 2,
+      "variables": [
+        "agency"
+      ]
+    }
+  ]
+}

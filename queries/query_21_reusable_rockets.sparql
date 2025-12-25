@@ -1,0 +1,10 @@
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+PREFIX ex: <http://krr.org/space/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?rocket ?agency
+WHERE {
+    ?rocket rdf:type onto:ReusableRocket .
+    ?rocket onto:hasAgency ?agency .
+}
+

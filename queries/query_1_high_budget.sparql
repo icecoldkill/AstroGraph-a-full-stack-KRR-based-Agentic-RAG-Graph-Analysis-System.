@@ -1,0 +1,6 @@
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+SELECT ?mission ?budget
+WHERE {
+    ?mission onto:hasBudget ?budget .
+    FILTER(?budget > 1000)
+}

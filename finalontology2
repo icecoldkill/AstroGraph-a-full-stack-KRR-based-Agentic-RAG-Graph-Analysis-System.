@@ -1,0 +1,677 @@
+@prefix : <http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2> .
+
+<http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#carriedPayload
+:carriedPayload rdf:type owl:ObjectProperty ;
+                rdfs:domain :SpaceMission ;
+                rdfs:range :Payload .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#hasAgency
+:hasAgency rdf:type owl:ObjectProperty ;
+           rdfs:domain :Rocket ;
+           rdfs:range :Agency .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#hasOrbit
+:hasOrbit rdf:type owl:ObjectProperty ;
+          rdfs:domain :SpaceMission ;
+          rdfs:range :Orbit .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#hasUniqueMissionID
+:hasUniqueMissionID rdf:type owl:ObjectProperty ,
+                             owl:InverseFunctionalProperty ;
+                    rdfs:domain :SpaceMission ;
+                    rdfs:range owl:Thing .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#inverseLaunchedBy
+:inverseLaunchedBy rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :launchedBy .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#isSuccess
+:isSuccess rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :SpaceMission ;
+           rdfs:range :LaunchStatus .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#launchedBy
+:launchedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :SpaceMission ;
+            rdfs:range :Agency .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#launchedFrom
+:launchedFrom rdf:type owl:ObjectProperty ;
+              rdfs:domain :SpaceMission ;
+              rdfs:range :LaunchSite .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#refersToCountry
+:refersToCountry rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Agency ;
+                 rdfs:range :Country .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#environmentalImpact
+:environmentalImpact rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :SpaceMission ;
+                     rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#hasBudget
+:hasBudget rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :SpaceMission ;
+           rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#launchDate
+:launchDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :SpaceMission ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#missionCost
+:missionCost rdf:type owl:DatatypeProperty ;
+             rdfs:domain :SpaceMission ;
+             rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#missionName
+:missionName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :SpaceMission ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#payloadWeight
+:payloadWeight rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Payload ;
+               rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocketStatus
+:rocketStatus rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Rocket ;
+              rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Agency
+:Agency rdf:type owl:Class ;
+        rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Astronaut
+:Astronaut rdf:type owl:Class ;
+           rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#CelestialBody
+:CelestialBody rdf:type owl:Class ;
+               rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#CommercialSpaceFlight
+:CommercialSpaceFlight rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :SpaceMission
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :launchedBy ;
+                                                                    owl:someValuesFrom :PrivateCompany
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#CommunicationSatellite
+:CommunicationSatellite rdf:type owl:Class ;
+                        rdfs:subClassOf :Satellite .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Continent
+:Continent rdf:type owl:Class ;
+           rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Country
+:Country rdf:type owl:Class ;
+         rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#CrewedMission
+:CrewedMission rdf:type owl:Class ;
+               rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Entity
+:Entity rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#ExpendableRocket
+:ExpendableRocket rdf:type owl:Class ;
+                  rdfs:subClassOf :Rocket .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#FailedMission
+:FailedMission rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( :SpaceMission
+                                                          [ rdf:type owl:Class ;
+                                                            owl:complementOf [ rdf:type owl:Restriction ;
+                                                                               owl:onProperty :isSuccess ;
+                                                                               owl:hasValue :Success
+                                                                             ]
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#GeostationaryOrbit
+:GeostationaryOrbit rdf:type owl:Class ;
+                    rdfs:subClassOf :Orbit .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#GovernmentAgency
+:GovernmentAgency rdf:type owl:Class ;
+                  rdfs:subClassOf :Agency .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#HighBudgetMission
+:HighBudgetMission rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :SpaceMission
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasBudget ;
+                                                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                     owl:onDatatype xsd:float ;
+                                                                                     owl:withRestrictions ( [ xsd:minInclusive "1000.0"^^xsd:float
+                                                                                                            ]
+                                                                                                          )
+                                                                                   ]
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#InterstellarMission
+:InterstellarMission rdf:type owl:Class ;
+                     rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#LaunchEntity
+:LaunchEntity rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:unionOf ( :GovernmentAgency
+                                                  :PrivateCompany
+                                                )
+                                  ] ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#LaunchSite
+:LaunchSite rdf:type owl:Class ;
+            rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#LaunchStatus
+:LaunchStatus rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:oneOf ( :Failure
+                                                :PartialFailure
+                                                :Scheduled
+                                                :Success
+                                              )
+                                  ] ;
+              rdfs:subClassOf owl:Thing .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#LowEarthOrbit
+:LowEarthOrbit rdf:type owl:Class ;
+               rdfs:subClassOf :Orbit .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#MarsMission
+:MarsMission rdf:type owl:Class ;
+             rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#MissionSuccessStatus
+:MissionSuccessStatus rdf:type owl:Class ;
+                      rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Moon
+:Moon rdf:type owl:Class ;
+      rdfs:subClassOf :CelestialBody .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#MoonMission
+:MoonMission rdf:type owl:Class ;
+             rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#NonGovernmentMission
+:NonGovernmentMission rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :SpaceMission
+                                                                 [ rdf:type owl:Class ;
+                                                                   owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :launchedBy ;
+                                                                                      owl:someValuesFrom :GovernmentAgency
+                                                                                    ]
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Orbit
+:Orbit rdf:type owl:Class ;
+       rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Payload
+:Payload rdf:type owl:Class ;
+         rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Planet
+:Planet rdf:type owl:Class ;
+        rdfs:subClassOf :CelestialBody .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#PrivateCompany
+:PrivateCompany rdf:type owl:Class ;
+                rdfs:subClassOf :Agency .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#ReusableRocket
+:ReusableRocket rdf:type owl:Class ;
+                rdfs:subClassOf :Rocket .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Rocket
+:Rocket rdf:type owl:Class ;
+        rdfs:subClassOf :Entity ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAgency ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Agency
+                        ] .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Satellite
+:Satellite rdf:type owl:Class ;
+           rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#ScientificInstrument
+:ScientificInstrument rdf:type owl:Class ;
+                      rdfs:subClassOf :Payload .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#SpaceMission
+:SpaceMission rdf:type owl:Class ;
+              rdfs:subClassOf :Entity .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#SpacePort
+:SpacePort rdf:type owl:Class ;
+           rdfs:subClassOf :LaunchSite .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#SpaceTourist
+:SpaceTourist rdf:type owl:Class ;
+              rdfs:subClassOf :Person .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#SpySatellite
+:SpySatellite rdf:type owl:Class ;
+              rdfs:subClassOf :Satellite .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Star
+:Star rdf:type owl:Class ;
+      rdfs:subClassOf :CelestialBody .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#SuccessfulMoonMission
+:SuccessfulMoonMission rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :MoonMission
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :isSuccess ;
+                                                                    owl:hasValue :Success
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#UncrewedMission
+:UncrewedMission rdf:type owl:Class ;
+                 rdfs:subClassOf :SpaceMission .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#WeatherSatellite
+:WeatherSatellite rdf:type owl:Class ;
+                  rdfs:subClassOf :Satellite .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://dbpedia.org/resource/Indian_Space_Research_Organisation
+<http://dbpedia.org/resource/Indian_Space_Research_Organisation> rdf:type owl:NamedIndividual ;
+                                                                 owl:sameAs :agency_ISRO .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_ISRO
+:agency_ISRO rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/NASA
+<http://dbpedia.org/resource/NASA> rdf:type owl:NamedIndividual ;
+                                   owl:sameAs :agency_NASA .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_NASA
+:agency_NASA rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Roscosmos
+<http://dbpedia.org/resource/Roscosmos> rdf:type owl:NamedIndividual ;
+                                        owl:sameAs :agency_Roscosmos .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_Roscosmos
+:agency_Roscosmos rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/SpaceX
+<http://dbpedia.org/resource/SpaceX> rdf:type owl:NamedIndividual ;
+                                     owl:sameAs :agency_SpaceX .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_SpaceX
+:agency_SpaceX rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Failure
+:Failure rdf:type owl:NamedIndividual ,
+                  :LaunchStatus .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#PartialFailure
+:PartialFailure rdf:type owl:NamedIndividual ,
+                         :LaunchStatus .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Scheduled
+:Scheduled rdf:type owl:NamedIndividual ,
+                    :LaunchStatus .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#Success
+:Success rdf:type owl:NamedIndividual ,
+                  :LaunchStatus .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_CNSA
+:agency_CNSA rdf:type owl:NamedIndividual ,
+                      :GovernmentAgency .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_ISRO
+:agency_ISRO rdf:type owl:NamedIndividual ,
+                      :GovernmentAgency .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_NASA
+:agency_NASA rdf:type owl:NamedIndividual ,
+                      :GovernmentAgency .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_Roscosmos
+:agency_Roscosmos rdf:type owl:NamedIndividual ,
+                           :GovernmentAgency .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_SpaceIL
+:agency_SpaceIL rdf:type owl:NamedIndividual ,
+                         :PrivateCompany .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#agency_SpaceX
+:agency_SpaceX rdf:type owl:NamedIndividual ,
+                        :PrivateCompany .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_1
+:mission_1 rdf:type owl:NamedIndividual ,
+                    :MoonMission ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_NASA ;
+           :launchedFrom :site_Kennedy_Space_Center ;
+           :environmentalImpact 8 ;
+           :hasBudget "25000.0"^^xsd:float ;
+           :launchDate "1969-07-16" ;
+           :missionName "Apollo 11" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_10
+:mission_10 rdf:type owl:NamedIndividual ,
+                     :MoonMission ,
+                     :SpaceMission ;
+            :isSuccess :Failure ;
+            :launchedBy :agency_SpaceIL ;
+            :launchedFrom :site_Cape_Canaveral ;
+            :environmentalImpact 3 ;
+            :hasBudget "100.0"^^xsd:float ;
+            :launchDate "2019-02-22" ;
+            :missionName "Beresheet" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_2
+:mission_2 rdf:type owl:NamedIndividual ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_SpaceX ;
+           :launchedFrom :site_Cape_Canaveral ;
+           :environmentalImpact 3 ;
+           :hasBudget "62.0"^^xsd:float ;
+           :launchDate "2023-05-01" ;
+           :missionName "Falcon 9 Launch" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_3
+:mission_3 rdf:type owl:NamedIndividual ,
+                    :MarsMission ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_NASA ;
+           :launchedFrom :site_Kennedy_Space_Center ;
+           :environmentalImpact 5 ;
+           :hasBudget "2700.0"^^xsd:float ;
+           :launchDate "2020-07-30" ;
+           :missionName "Mars Rover Perseverance" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_4
+:mission_4 rdf:type owl:NamedIndividual ,
+                    :MoonMission ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_ISRO ;
+           :launchedFrom :site_Satish_Dhawan_Space_Centre ;
+           :environmentalImpact 4 ;
+           :hasBudget "75.0"^^xsd:float ;
+           :launchDate "2023-07-14" ;
+           :missionName "Chandrayaan-3" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_5
+:mission_5 rdf:type owl:NamedIndividual ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_SpaceX ;
+           :launchedFrom :site_Kennedy_Space_Center ;
+           :environmentalImpact 3 ;
+           :hasBudget "50.0"^^xsd:float ;
+           :launchDate "2024-01-10" ;
+           :missionName "Starlink-105" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_6
+:mission_6 rdf:type owl:NamedIndividual ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_NASA ;
+           :launchedFrom :site_Cape_Canaveral ;
+           :environmentalImpact 7 ;
+           :hasBudget "250.0"^^xsd:float ;
+           :launchDate "1977-09-05" ;
+           :missionName "Voyager 1" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_7
+:mission_7 rdf:type owl:NamedIndividual ,
+                    :MoonMission ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_NASA ;
+           :launchedFrom :site_Kennedy_Space_Center ;
+           :environmentalImpact 9 ;
+           :hasBudget "4100.0"^^xsd:float ;
+           :launchDate "2022-11-16" ;
+           :missionName "Artemis I" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_8
+:mission_8 rdf:type owl:NamedIndividual ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_Roscosmos ;
+           :launchedFrom :site_Baikonur_Cosmodrome ;
+           :environmentalImpact 6 ;
+           :hasBudget "150.0"^^xsd:float ;
+           :launchDate "2023-09-15" ;
+           :missionName "Soyuz MS-24" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#mission_9
+:mission_9 rdf:type owl:NamedIndividual ,
+                    :MarsMission ,
+                    :SpaceMission ;
+           :isSuccess :Success ;
+           :launchedBy :agency_CNSA ;
+           :launchedFrom :site_Wenchang ;
+           :environmentalImpact 8 ;
+           :hasBudget "8000.0"^^xsd:float ;
+           :launchDate "2020-07-23" ;
+           :missionName "Tianwen-1" .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocket_Atlas_V
+:rocket_Atlas_V rdf:type owl:NamedIndividual ,
+                         :Rocket ;
+                :hasAgency :agency_NASA .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocket_Falcon_9
+:rocket_Falcon_9 rdf:type owl:NamedIndividual ,
+                          :Rocket ;
+                 :hasAgency :agency_SpaceIL ,
+                            :agency_SpaceX .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocket_LVM3
+:rocket_LVM3 rdf:type owl:NamedIndividual ,
+                      :Rocket ;
+             :hasAgency :agency_ISRO .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocket_Long_March_5
+:rocket_Long_March_5 rdf:type owl:NamedIndividual ,
+                              :Rocket ;
+                     :hasAgency :agency_CNSA .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocket_SLS
+:rocket_SLS rdf:type owl:NamedIndividual ,
+                     :Rocket ;
+            :hasAgency :agency_NASA .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocket_Saturn_V
+:rocket_Saturn_V rdf:type owl:NamedIndividual ,
+                          :Rocket ;
+                 :hasAgency :agency_NASA .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocket_Soyuz-2
+:rocket_Soyuz-2 rdf:type owl:NamedIndividual ,
+                         :Rocket ;
+                :hasAgency :agency_Roscosmos .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#rocket_Titan_IIIE
+:rocket_Titan_IIIE rdf:type owl:NamedIndividual ,
+                            :Rocket ;
+                   :hasAgency :agency_NASA .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#site_Baikonur_Cosmodrome
+:site_Baikonur_Cosmodrome rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#site_Cape_Canaveral
+:site_Cape_Canaveral rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#site_Kennedy_Space_Center
+:site_Kennedy_Space_Center rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#site_Satish_Dhawan_Space_Centre
+:site_Satish_Dhawan_Space_Centre rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ahsansaleem/ontologies/2025/11/untitled-ontology-2#site_Wenchang
+:site_Wenchang rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,26 @@
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+PREFIX ex: <http://krr.org/space/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+# Federated query: Get NASA info from our KG and link to DBpedia
+SELECT ?agency ?missionName ?dbpediaAbstract
+WHERE {
+    # Local query
+    ?agency rdf:type onto:GovernmentAgency .
+    ?agency owl:sameAs dbr:NASA .
+    ?mission rdf:type onto:SpaceMission .
+    ?mission onto:launchedBy ?agency .
+    ?mission onto:missionName ?missionName .
+    
+    # Federated query to DBpedia (requires SERVICE clause)
+    # Note: This is a template - actual execution depends on SPARQL endpoint support
+    SERVICE <http://dbpedia.org/sparql> {
+        dbr:NASA dbo:abstract ?dbpediaAbstract .
+        FILTER (lang(?dbpediaAbstract) = "en")
+    }
+}
+LIMIT 5
+

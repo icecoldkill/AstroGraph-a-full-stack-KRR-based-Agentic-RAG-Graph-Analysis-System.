@@ -1,0 +1,786 @@
+@prefix : <http://krr.org/space_missions_materialized#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://krr.org/space_missions_materialized> .
+
+<http://krr.org/space_missions_materialized> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://krr.org/space_exploration.owl#carriedPayload
+<http://krr.org/space_exploration.owl#carriedPayload> rdf:type owl:ObjectProperty ;
+                                                      rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                      rdfs:range <http://krr.org/space_exploration.owl#Payload> .
+
+
+###  http://krr.org/space_exploration.owl#hasAgency
+<http://krr.org/space_exploration.owl#hasAgency> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <http://krr.org/space_exploration.owl#Rocket> ;
+                                                 rdfs:range <http://krr.org/space_exploration.owl#Agency> .
+
+
+###  http://krr.org/space_exploration.owl#hasOrbit
+<http://krr.org/space_exploration.owl#hasOrbit> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                rdfs:range <http://krr.org/space_exploration.owl#Orbit> .
+
+
+###  http://krr.org/space_exploration.owl#hasUniqueMissionID
+<http://krr.org/space_exploration.owl#hasUniqueMissionID> rdf:type owl:ObjectProperty ,
+                                                                   owl:InverseFunctionalProperty ;
+                                                          rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                          rdfs:range owl:Thing .
+
+
+###  http://krr.org/space_exploration.owl#inverseLaunchedBy
+<http://krr.org/space_exploration.owl#inverseLaunchedBy> rdf:type owl:ObjectProperty ;
+                                                         owl:inverseOf <http://krr.org/space_exploration.owl#launchedBy> .
+
+
+###  http://krr.org/space_exploration.owl#isSuccess
+<http://krr.org/space_exploration.owl#isSuccess> rdf:type owl:ObjectProperty ,
+                                                          owl:FunctionalProperty ;
+                                                 rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                 rdfs:range <http://krr.org/space_exploration.owl#LaunchStatus> .
+
+
+###  http://krr.org/space_exploration.owl#launchedBy
+<http://krr.org/space_exploration.owl#launchedBy> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                  rdfs:range <http://krr.org/space_exploration.owl#Agency> .
+
+
+###  http://krr.org/space_exploration.owl#launchedFrom
+<http://krr.org/space_exploration.owl#launchedFrom> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                    rdfs:range <http://krr.org/space_exploration.owl#LaunchSite> .
+
+
+###  http://krr.org/space_exploration.owl#refersToCountry
+<http://krr.org/space_exploration.owl#refersToCountry> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://krr.org/space_exploration.owl#Agency> ;
+                                                       rdfs:range <http://krr.org/space_exploration.owl#Country> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://krr.org/space_exploration.owl#environmentalImpact
+<http://krr.org/space_exploration.owl#environmentalImpact> rdf:type owl:DatatypeProperty ;
+                                                           rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                           rdfs:range xsd:integer .
+
+
+###  http://krr.org/space_exploration.owl#hasBudget
+<http://krr.org/space_exploration.owl#hasBudget> rdf:type owl:DatatypeProperty ,
+                                                          owl:FunctionalProperty ;
+                                                 rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                 rdfs:range xsd:float .
+
+
+###  http://krr.org/space_exploration.owl#launchDate
+<http://krr.org/space_exploration.owl#launchDate> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                  rdfs:range xsd:string .
+
+
+###  http://krr.org/space_exploration.owl#missionCost
+<http://krr.org/space_exploration.owl#missionCost> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                   rdfs:range xsd:float .
+
+
+###  http://krr.org/space_exploration.owl#missionName
+<http://krr.org/space_exploration.owl#missionName> rdf:type owl:DatatypeProperty ;
+                                                   rdfs:domain <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                   rdfs:range xsd:string .
+
+
+###  http://krr.org/space_exploration.owl#payloadWeight
+<http://krr.org/space_exploration.owl#payloadWeight> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <http://krr.org/space_exploration.owl#Payload> ;
+                                                     rdfs:range xsd:float .
+
+
+###  http://krr.org/space_exploration.owl#rocketStatus
+<http://krr.org/space_exploration.owl#rocketStatus> rdf:type owl:DatatypeProperty ;
+                                                    rdfs:domain <http://krr.org/space_exploration.owl#Rocket> ;
+                                                    rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://krr.org/space_exploration.owl#Agency
+<http://krr.org/space_exploration.owl#Agency> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#Astronaut
+<http://krr.org/space_exploration.owl#Astronaut> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://krr.org/space_exploration.owl#Person> .
+
+
+###  http://krr.org/space_exploration.owl#CelestialBody
+<http://krr.org/space_exploration.owl#CelestialBody> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#CommercialSpaceFlight
+<http://krr.org/space_exploration.owl#CommercialSpaceFlight> rdf:type owl:Class ;
+                                                             owl:equivalentClass [ owl:intersectionOf ( <http://krr.org/space_exploration.owl#SpaceMission>
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://krr.org/space_exploration.owl#launchedBy> ;
+                                                                                                          owl:someValuesFrom <http://krr.org/space_exploration.owl#PrivateCompany>
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ;
+                                                             rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#CommunicationSatellite
+<http://krr.org/space_exploration.owl#CommunicationSatellite> rdf:type owl:Class ;
+                                                              rdfs:subClassOf <http://krr.org/space_exploration.owl#Satellite> .
+
+
+###  http://krr.org/space_exploration.owl#Continent
+<http://krr.org/space_exploration.owl#Continent> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#Country
+<http://krr.org/space_exploration.owl#Country> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#CrewedMission
+<http://krr.org/space_exploration.owl#CrewedMission> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#Entity
+<http://krr.org/space_exploration.owl#Entity> rdf:type owl:Class ;
+                                              rdfs:subClassOf owl:Thing .
+
+
+###  http://krr.org/space_exploration.owl#ExpendableRocket
+<http://krr.org/space_exploration.owl#ExpendableRocket> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://krr.org/space_exploration.owl#Rocket> .
+
+
+###  http://krr.org/space_exploration.owl#FailedMission
+<http://krr.org/space_exploration.owl#FailedMission> rdf:type owl:Class ;
+                                                     owl:equivalentClass [ owl:intersectionOf ( <http://krr.org/space_exploration.owl#SpaceMission>
+                                                                                                [ rdf:type owl:Class ;
+                                                                                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                                     owl:onProperty <http://krr.org/space_exploration.owl#isSuccess> ;
+                                                                                                                     owl:hasValue <http://krr.org/space_exploration.owl#Success>
+                                                                                                                   ]
+                                                                                                ]
+                                                                                              ) ;
+                                                                           rdf:type owl:Class
+                                                                         ] ;
+                                                     rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#GeostationaryOrbit
+<http://krr.org/space_exploration.owl#GeostationaryOrbit> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://krr.org/space_exploration.owl#Orbit> .
+
+
+###  http://krr.org/space_exploration.owl#GovernmentAgency
+<http://krr.org/space_exploration.owl#GovernmentAgency> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://krr.org/space_exploration.owl#Agency> ,
+                                                                        <http://krr.org/space_exploration.owl#LaunchEntity> .
+
+
+###  http://krr.org/space_exploration.owl#HighBudgetMission
+<http://krr.org/space_exploration.owl#HighBudgetMission> rdf:type owl:Class ;
+                                                         owl:equivalentClass [ owl:intersectionOf ( <http://krr.org/space_exploration.owl#SpaceMission>
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://krr.org/space_exploration.owl#hasBudget> ;
+                                                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                                                           owl:onDatatype xsd:float ;
+                                                                                                                           owl:withRestrictions ( [ xsd:minInclusive "1000.0"^^xsd:float
+                                                                                                                                                  ]
+                                                                                                                                                )
+                                                                                                                         ]
+                                                                                                    ]
+                                                                                                  ) ;
+                                                                               rdf:type owl:Class
+                                                                             ] ;
+                                                         rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#InterstellarMission
+<http://krr.org/space_exploration.owl#InterstellarMission> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#LaunchEntity
+<http://krr.org/space_exploration.owl#LaunchEntity> rdf:type owl:Class ;
+                                                    owl:equivalentClass [ rdf:type owl:Class ;
+                                                                          owl:unionOf ( <http://krr.org/space_exploration.owl#GovernmentAgency>
+                                                                                        <http://krr.org/space_exploration.owl#PrivateCompany>
+                                                                                      )
+                                                                        ] ;
+                                                    rdfs:subClassOf <http://krr.org/space_exploration.owl#Agency> ,
+                                                                    owl:Thing .
+
+
+###  http://krr.org/space_exploration.owl#LaunchSite
+<http://krr.org/space_exploration.owl#LaunchSite> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#LaunchStatus
+<http://krr.org/space_exploration.owl#LaunchStatus> rdf:type owl:Class ;
+                                                    owl:equivalentClass [ rdf:type owl:Class ;
+                                                                          owl:oneOf ( <http://krr.org/space_exploration.owl#Failure>
+                                                                                      <http://krr.org/space_exploration.owl#PartialFailure>
+                                                                                      <http://krr.org/space_exploration.owl#Scheduled>
+                                                                                      <http://krr.org/space_exploration.owl#Success>
+                                                                                    )
+                                                                        ] ;
+                                                    rdfs:subClassOf owl:Thing .
+
+
+###  http://krr.org/space_exploration.owl#LowEarthOrbit
+<http://krr.org/space_exploration.owl#LowEarthOrbit> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://krr.org/space_exploration.owl#Orbit> .
+
+
+###  http://krr.org/space_exploration.owl#MarsMission
+<http://krr.org/space_exploration.owl#MarsMission> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#MissionSuccessStatus
+<http://krr.org/space_exploration.owl#MissionSuccessStatus> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#Moon
+<http://krr.org/space_exploration.owl#Moon> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://krr.org/space_exploration.owl#CelestialBody> .
+
+
+###  http://krr.org/space_exploration.owl#MoonMission
+<http://krr.org/space_exploration.owl#MoonMission> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#NonGovernmentMission
+<http://krr.org/space_exploration.owl#NonGovernmentMission> rdf:type owl:Class ;
+                                                            owl:equivalentClass [ owl:intersectionOf ( <http://krr.org/space_exploration.owl#SpaceMission>
+                                                                                                       [ rdf:type owl:Class ;
+                                                                                                         owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                                            owl:onProperty <http://krr.org/space_exploration.owl#launchedBy> ;
+                                                                                                                            owl:someValuesFrom <http://krr.org/space_exploration.owl#GovernmentAgency>
+                                                                                                                          ]
+                                                                                                       ]
+                                                                                                     ) ;
+                                                                                  rdf:type owl:Class
+                                                                                ] ;
+                                                            rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#Orbit
+<http://krr.org/space_exploration.owl#Orbit> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#Payload
+<http://krr.org/space_exploration.owl#Payload> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#Person
+<http://krr.org/space_exploration.owl#Person> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#Planet
+<http://krr.org/space_exploration.owl#Planet> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://krr.org/space_exploration.owl#CelestialBody> .
+
+
+###  http://krr.org/space_exploration.owl#PrivateCompany
+<http://krr.org/space_exploration.owl#PrivateCompany> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://krr.org/space_exploration.owl#Agency> ,
+                                                                      <http://krr.org/space_exploration.owl#LaunchEntity> .
+
+
+###  http://krr.org/space_exploration.owl#ReusableRocket
+<http://krr.org/space_exploration.owl#ReusableRocket> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://krr.org/space_exploration.owl#Rocket> .
+
+
+###  http://krr.org/space_exploration.owl#Rocket
+<http://krr.org/space_exploration.owl#Rocket> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://krr.org/space_exploration.owl#hasAgency> ;
+                                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                owl:onClass <http://krr.org/space_exploration.owl#Agency>
+                                                              ] .
+
+
+###  http://krr.org/space_exploration.owl#Satellite
+<http://krr.org/space_exploration.owl#Satellite> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#ScientificInstrument
+<http://krr.org/space_exploration.owl#ScientificInstrument> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://krr.org/space_exploration.owl#Payload> .
+
+
+###  http://krr.org/space_exploration.owl#SpaceMission
+<http://krr.org/space_exploration.owl#SpaceMission> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://krr.org/space_exploration.owl#Entity> .
+
+
+###  http://krr.org/space_exploration.owl#SpacePort
+<http://krr.org/space_exploration.owl#SpacePort> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://krr.org/space_exploration.owl#LaunchSite> .
+
+
+###  http://krr.org/space_exploration.owl#SpaceTourist
+<http://krr.org/space_exploration.owl#SpaceTourist> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://krr.org/space_exploration.owl#Person> .
+
+
+###  http://krr.org/space_exploration.owl#SpySatellite
+<http://krr.org/space_exploration.owl#SpySatellite> rdf:type owl:Class ;
+                                                    rdfs:subClassOf <http://krr.org/space_exploration.owl#Satellite> .
+
+
+###  http://krr.org/space_exploration.owl#Star
+<http://krr.org/space_exploration.owl#Star> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://krr.org/space_exploration.owl#CelestialBody> .
+
+
+###  http://krr.org/space_exploration.owl#SuccessfulMoonMission
+<http://krr.org/space_exploration.owl#SuccessfulMoonMission> rdf:type owl:Class ;
+                                                             owl:equivalentClass [ owl:intersectionOf ( <http://krr.org/space_exploration.owl#MoonMission>
+                                                                                                        [ rdf:type owl:Restriction ;
+                                                                                                          owl:onProperty <http://krr.org/space_exploration.owl#isSuccess> ;
+                                                                                                          owl:hasValue <http://krr.org/space_exploration.owl#Success>
+                                                                                                        ]
+                                                                                                      ) ;
+                                                                                   rdf:type owl:Class
+                                                                                 ] ;
+                                                             rdfs:subClassOf <http://krr.org/space_exploration.owl#MoonMission> ,
+                                                                             <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#UncrewedMission
+<http://krr.org/space_exploration.owl#UncrewedMission> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://krr.org/space_exploration.owl#SpaceMission> .
+
+
+###  http://krr.org/space_exploration.owl#WeatherSatellite
+<http://krr.org/space_exploration.owl#WeatherSatellite> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://krr.org/space_exploration.owl#Satellite> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://dbpedia.org/resource/Indian_Space_Research_Organisation
+<http://dbpedia.org/resource/Indian_Space_Research_Organisation> rdf:type owl:NamedIndividual ,
+                                                                          <http://krr.org/space_exploration.owl#Agency> ,
+                                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                                          <http://krr.org/space_exploration.owl#GovernmentAgency> ,
+                                                                          <http://krr.org/space_exploration.owl#LaunchEntity> ;
+                                                                 owl:sameAs <http://krr.org/space_exploration.owl#agency_ISRO> ;
+                                                                 <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_4> .
+
+
+###  http://krr.org/space_exploration.owl#agency_ISRO
+<http://krr.org/space_exploration.owl#agency_ISRO> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/NASA
+<http://dbpedia.org/resource/NASA> rdf:type owl:NamedIndividual ,
+                                            <http://krr.org/space_exploration.owl#Agency> ,
+                                            <http://krr.org/space_exploration.owl#Entity> ,
+                                            <http://krr.org/space_exploration.owl#GovernmentAgency> ,
+                                            <http://krr.org/space_exploration.owl#LaunchEntity> ;
+                                   owl:sameAs <http://krr.org/space_exploration.owl#agency_NASA> ;
+                                   <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_1> ,
+                                                                                            <http://krr.org/space_exploration.owl#mission_3> ,
+                                                                                            <http://krr.org/space_exploration.owl#mission_6> ,
+                                                                                            <http://krr.org/space_exploration.owl#mission_7> .
+
+
+###  http://krr.org/space_exploration.owl#agency_NASA
+<http://krr.org/space_exploration.owl#agency_NASA> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/Roscosmos
+<http://dbpedia.org/resource/Roscosmos> rdf:type owl:NamedIndividual ,
+                                                 <http://krr.org/space_exploration.owl#Agency> ,
+                                                 <http://krr.org/space_exploration.owl#Entity> ,
+                                                 <http://krr.org/space_exploration.owl#GovernmentAgency> ,
+                                                 <http://krr.org/space_exploration.owl#LaunchEntity> ;
+                                        owl:sameAs <http://krr.org/space_exploration.owl#agency_Roscosmos> ;
+                                        <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_8> .
+
+
+###  http://krr.org/space_exploration.owl#agency_Roscosmos
+<http://krr.org/space_exploration.owl#agency_Roscosmos> rdf:type owl:NamedIndividual .
+
+
+###  http://dbpedia.org/resource/SpaceX
+<http://dbpedia.org/resource/SpaceX> rdf:type owl:NamedIndividual ,
+                                              <http://krr.org/space_exploration.owl#Agency> ,
+                                              <http://krr.org/space_exploration.owl#Entity> ,
+                                              <http://krr.org/space_exploration.owl#LaunchEntity> ,
+                                              <http://krr.org/space_exploration.owl#PrivateCompany> ;
+                                     owl:sameAs <http://krr.org/space_exploration.owl#agency_SpaceX> ;
+                                     <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_2> ,
+                                                                                              <http://krr.org/space_exploration.owl#mission_5> .
+
+
+###  http://krr.org/space_exploration.owl#agency_SpaceX
+<http://krr.org/space_exploration.owl#agency_SpaceX> rdf:type owl:NamedIndividual .
+
+
+###  http://krr.org/space_exploration.owl#Failure
+<http://krr.org/space_exploration.owl#Failure> rdf:type owl:NamedIndividual ,
+                                                        <http://krr.org/space_exploration.owl#LaunchStatus> .
+
+
+###  http://krr.org/space_exploration.owl#PartialFailure
+<http://krr.org/space_exploration.owl#PartialFailure> rdf:type owl:NamedIndividual ,
+                                                               <http://krr.org/space_exploration.owl#LaunchStatus> .
+
+
+###  http://krr.org/space_exploration.owl#Scheduled
+<http://krr.org/space_exploration.owl#Scheduled> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#LaunchStatus> .
+
+
+###  http://krr.org/space_exploration.owl#Success
+<http://krr.org/space_exploration.owl#Success> rdf:type owl:NamedIndividual ,
+                                                        <http://krr.org/space_exploration.owl#LaunchStatus> .
+
+
+###  http://krr.org/space_exploration.owl#agency_CNSA
+<http://krr.org/space_exploration.owl#agency_CNSA> rdf:type owl:NamedIndividual ,
+                                                            <http://krr.org/space_exploration.owl#Agency> ,
+                                                            <http://krr.org/space_exploration.owl#Entity> ,
+                                                            <http://krr.org/space_exploration.owl#GovernmentAgency> ,
+                                                            <http://krr.org/space_exploration.owl#LaunchEntity> ;
+                                                   <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_9> .
+
+
+###  http://krr.org/space_exploration.owl#agency_ISRO
+<http://krr.org/space_exploration.owl#agency_ISRO> rdf:type owl:NamedIndividual ,
+                                                            <http://krr.org/space_exploration.owl#Agency> ,
+                                                            <http://krr.org/space_exploration.owl#Entity> ,
+                                                            <http://krr.org/space_exploration.owl#GovernmentAgency> ,
+                                                            <http://krr.org/space_exploration.owl#LaunchEntity> ;
+                                                   <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_4> .
+
+
+###  http://krr.org/space_exploration.owl#agency_NASA
+<http://krr.org/space_exploration.owl#agency_NASA> rdf:type owl:NamedIndividual ,
+                                                            <http://krr.org/space_exploration.owl#Agency> ,
+                                                            <http://krr.org/space_exploration.owl#Entity> ,
+                                                            <http://krr.org/space_exploration.owl#GovernmentAgency> ,
+                                                            <http://krr.org/space_exploration.owl#LaunchEntity> ;
+                                                   <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_1> ,
+                                                                                                            <http://krr.org/space_exploration.owl#mission_3> ,
+                                                                                                            <http://krr.org/space_exploration.owl#mission_6> ,
+                                                                                                            <http://krr.org/space_exploration.owl#mission_7> .
+
+
+###  http://krr.org/space_exploration.owl#agency_Roscosmos
+<http://krr.org/space_exploration.owl#agency_Roscosmos> rdf:type owl:NamedIndividual ,
+                                                                 <http://krr.org/space_exploration.owl#Agency> ,
+                                                                 <http://krr.org/space_exploration.owl#Entity> ,
+                                                                 <http://krr.org/space_exploration.owl#GovernmentAgency> ,
+                                                                 <http://krr.org/space_exploration.owl#LaunchEntity> ;
+                                                        <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_8> .
+
+
+###  http://krr.org/space_exploration.owl#agency_SpaceIL
+<http://krr.org/space_exploration.owl#agency_SpaceIL> rdf:type owl:NamedIndividual ,
+                                                               <http://krr.org/space_exploration.owl#Agency> ,
+                                                               <http://krr.org/space_exploration.owl#Entity> ,
+                                                               <http://krr.org/space_exploration.owl#LaunchEntity> ,
+                                                               <http://krr.org/space_exploration.owl#PrivateCompany> ;
+                                                      <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_10> .
+
+
+###  http://krr.org/space_exploration.owl#agency_SpaceX
+<http://krr.org/space_exploration.owl#agency_SpaceX> rdf:type owl:NamedIndividual ,
+                                                              <http://krr.org/space_exploration.owl#Agency> ,
+                                                              <http://krr.org/space_exploration.owl#Entity> ,
+                                                              <http://krr.org/space_exploration.owl#LaunchEntity> ,
+                                                              <http://krr.org/space_exploration.owl#PrivateCompany> ;
+                                                     <http://krr.org/space_exploration.owl#inverseLaunchedBy> <http://krr.org/space_exploration.owl#mission_2> ,
+                                                                                                              <http://krr.org/space_exploration.owl#mission_5> .
+
+
+###  http://krr.org/space_exploration.owl#mission_1
+<http://krr.org/space_exploration.owl#mission_1> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#HighBudgetMission> ,
+                                                          <http://krr.org/space_exploration.owl#MoonMission> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ,
+                                                          <http://krr.org/space_exploration.owl#SuccessfulMoonMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://dbpedia.org/resource/NASA> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_NASA> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Kennedy_Space_Center> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 8 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "25000.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "1969-07-16" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Apollo 11" .
+
+
+###  http://krr.org/space_exploration.owl#mission_10
+<http://krr.org/space_exploration.owl#mission_10> rdf:type owl:NamedIndividual ,
+                                                           <http://krr.org/space_exploration.owl#CommercialSpaceFlight> ,
+                                                           <http://krr.org/space_exploration.owl#Entity> ,
+                                                           <http://krr.org/space_exploration.owl#MoonMission> ,
+                                                           <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                  <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Failure> ;
+                                                  <http://krr.org/space_exploration.owl#launchedBy> <http://krr.org/space_exploration.owl#agency_SpaceIL> ;
+                                                  <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Cape_Canaveral> ;
+                                                  <http://krr.org/space_exploration.owl#environmentalImpact> 3 ;
+                                                  <http://krr.org/space_exploration.owl#hasBudget> "100.0"^^xsd:float ;
+                                                  <http://krr.org/space_exploration.owl#launchDate> "2019-02-22" ;
+                                                  <http://krr.org/space_exploration.owl#missionName> "Beresheet" .
+
+
+###  http://krr.org/space_exploration.owl#mission_2
+<http://krr.org/space_exploration.owl#mission_2> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#CommercialSpaceFlight> ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://dbpedia.org/resource/SpaceX> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_SpaceX> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Cape_Canaveral> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 3 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "62.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "2023-05-01" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Falcon 9 Launch" .
+
+
+###  http://krr.org/space_exploration.owl#mission_3
+<http://krr.org/space_exploration.owl#mission_3> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#HighBudgetMission> ,
+                                                          <http://krr.org/space_exploration.owl#MarsMission> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://dbpedia.org/resource/NASA> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_NASA> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Kennedy_Space_Center> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 5 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "2700.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "2020-07-30" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Mars Rover Perseverance" .
+
+
+###  http://krr.org/space_exploration.owl#mission_4
+<http://krr.org/space_exploration.owl#mission_4> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#MoonMission> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ,
+                                                          <http://krr.org/space_exploration.owl#SuccessfulMoonMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://dbpedia.org/resource/Indian_Space_Research_Organisation> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_ISRO> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Satish_Dhawan_Space_Centre> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 4 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "75.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "2023-07-14" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Chandrayaan-3" .
+
+
+###  http://krr.org/space_exploration.owl#mission_5
+<http://krr.org/space_exploration.owl#mission_5> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#CommercialSpaceFlight> ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://dbpedia.org/resource/SpaceX> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_SpaceX> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Kennedy_Space_Center> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 3 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "50.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "2024-01-10" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Starlink-105" .
+
+
+###  http://krr.org/space_exploration.owl#mission_6
+<http://krr.org/space_exploration.owl#mission_6> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://dbpedia.org/resource/NASA> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_NASA> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Cape_Canaveral> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 7 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "250.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "1977-09-05" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Voyager 1" .
+
+
+###  http://krr.org/space_exploration.owl#mission_7
+<http://krr.org/space_exploration.owl#mission_7> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#HighBudgetMission> ,
+                                                          <http://krr.org/space_exploration.owl#MoonMission> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ,
+                                                          <http://krr.org/space_exploration.owl#SuccessfulMoonMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://dbpedia.org/resource/NASA> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_NASA> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Kennedy_Space_Center> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 9 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "4100.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "2022-11-16" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Artemis I" .
+
+
+###  http://krr.org/space_exploration.owl#mission_8
+<http://krr.org/space_exploration.owl#mission_8> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://dbpedia.org/resource/Roscosmos> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_Roscosmos> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Baikonur_Cosmodrome> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 6 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "150.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "2023-09-15" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Soyuz MS-24" .
+
+
+###  http://krr.org/space_exploration.owl#mission_9
+<http://krr.org/space_exploration.owl#mission_9> rdf:type owl:NamedIndividual ,
+                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                          <http://krr.org/space_exploration.owl#HighBudgetMission> ,
+                                                          <http://krr.org/space_exploration.owl#MarsMission> ,
+                                                          <http://krr.org/space_exploration.owl#SpaceMission> ;
+                                                 <http://krr.org/space_exploration.owl#isSuccess> <http://krr.org/space_exploration.owl#Success> ;
+                                                 <http://krr.org/space_exploration.owl#launchedBy> <http://krr.org/space_exploration.owl#agency_CNSA> ;
+                                                 <http://krr.org/space_exploration.owl#launchedFrom> <http://krr.org/space_exploration.owl#site_Wenchang> ;
+                                                 <http://krr.org/space_exploration.owl#environmentalImpact> 8 ;
+                                                 <http://krr.org/space_exploration.owl#hasBudget> "8000.0"^^xsd:float ;
+                                                 <http://krr.org/space_exploration.owl#launchDate> "2020-07-23" ;
+                                                 <http://krr.org/space_exploration.owl#missionName> "Tianwen-1" .
+
+
+###  http://krr.org/space_exploration.owl#rocket_Atlas_V
+<http://krr.org/space_exploration.owl#rocket_Atlas_V> rdf:type owl:NamedIndividual ,
+                                                               <http://krr.org/space_exploration.owl#Entity> ,
+                                                               <http://krr.org/space_exploration.owl#Rocket> ;
+                                                      <http://krr.org/space_exploration.owl#hasAgency> <http://dbpedia.org/resource/NASA> ,
+                                                                                                       <http://krr.org/space_exploration.owl#agency_NASA> .
+
+
+###  http://krr.org/space_exploration.owl#rocket_Falcon_9
+<http://krr.org/space_exploration.owl#rocket_Falcon_9> rdf:type owl:NamedIndividual ,
+                                                                <http://krr.org/space_exploration.owl#Entity> ,
+                                                                <http://krr.org/space_exploration.owl#Rocket> ;
+                                                       <http://krr.org/space_exploration.owl#hasAgency> <http://dbpedia.org/resource/SpaceX> ,
+                                                                                                        <http://krr.org/space_exploration.owl#agency_SpaceIL> ,
+                                                                                                        <http://krr.org/space_exploration.owl#agency_SpaceX> .
+
+
+###  http://krr.org/space_exploration.owl#rocket_LVM3
+<http://krr.org/space_exploration.owl#rocket_LVM3> rdf:type owl:NamedIndividual ,
+                                                            <http://krr.org/space_exploration.owl#Entity> ,
+                                                            <http://krr.org/space_exploration.owl#Rocket> ;
+                                                   <http://krr.org/space_exploration.owl#hasAgency> <http://dbpedia.org/resource/Indian_Space_Research_Organisation> ,
+                                                                                                    <http://krr.org/space_exploration.owl#agency_ISRO> .
+
+
+###  http://krr.org/space_exploration.owl#rocket_Long_March_5
+<http://krr.org/space_exploration.owl#rocket_Long_March_5> rdf:type owl:NamedIndividual ,
+                                                                    <http://krr.org/space_exploration.owl#Entity> ,
+                                                                    <http://krr.org/space_exploration.owl#Rocket> ;
+                                                           <http://krr.org/space_exploration.owl#hasAgency> <http://krr.org/space_exploration.owl#agency_CNSA> .
+
+
+###  http://krr.org/space_exploration.owl#rocket_SLS
+<http://krr.org/space_exploration.owl#rocket_SLS> rdf:type owl:NamedIndividual ,
+                                                           <http://krr.org/space_exploration.owl#Entity> ,
+                                                           <http://krr.org/space_exploration.owl#Rocket> ;
+                                                  <http://krr.org/space_exploration.owl#hasAgency> <http://dbpedia.org/resource/NASA> ,
+                                                                                                   <http://krr.org/space_exploration.owl#agency_NASA> .
+
+
+###  http://krr.org/space_exploration.owl#rocket_Saturn_V
+<http://krr.org/space_exploration.owl#rocket_Saturn_V> rdf:type owl:NamedIndividual ,
+                                                                <http://krr.org/space_exploration.owl#Entity> ,
+                                                                <http://krr.org/space_exploration.owl#Rocket> ;
+                                                       <http://krr.org/space_exploration.owl#hasAgency> <http://dbpedia.org/resource/NASA> ,
+                                                                                                        <http://krr.org/space_exploration.owl#agency_NASA> .
+
+
+###  http://krr.org/space_exploration.owl#rocket_Soyuz-2
+<http://krr.org/space_exploration.owl#rocket_Soyuz-2> rdf:type owl:NamedIndividual ,
+                                                               <http://krr.org/space_exploration.owl#Entity> ,
+                                                               <http://krr.org/space_exploration.owl#Rocket> ;
+                                                      <http://krr.org/space_exploration.owl#hasAgency> <http://dbpedia.org/resource/Roscosmos> ,
+                                                                                                       <http://krr.org/space_exploration.owl#agency_Roscosmos> .
+
+
+###  http://krr.org/space_exploration.owl#rocket_Titan_IIIE
+<http://krr.org/space_exploration.owl#rocket_Titan_IIIE> rdf:type owl:NamedIndividual ,
+                                                                  <http://krr.org/space_exploration.owl#Entity> ,
+                                                                  <http://krr.org/space_exploration.owl#Rocket> ;
+                                                         <http://krr.org/space_exploration.owl#hasAgency> <http://dbpedia.org/resource/NASA> ,
+                                                                                                          <http://krr.org/space_exploration.owl#agency_NASA> .
+
+
+###  http://krr.org/space_exploration.owl#site_Baikonur_Cosmodrome
+<http://krr.org/space_exploration.owl#site_Baikonur_Cosmodrome> rdf:type owl:NamedIndividual ,
+                                                                         <http://krr.org/space_exploration.owl#Entity> ,
+                                                                         <http://krr.org/space_exploration.owl#LaunchSite> .
+
+
+###  http://krr.org/space_exploration.owl#site_Cape_Canaveral
+<http://krr.org/space_exploration.owl#site_Cape_Canaveral> rdf:type owl:NamedIndividual ,
+                                                                    <http://krr.org/space_exploration.owl#Entity> ,
+                                                                    <http://krr.org/space_exploration.owl#LaunchSite> .
+
+
+###  http://krr.org/space_exploration.owl#site_Kennedy_Space_Center
+<http://krr.org/space_exploration.owl#site_Kennedy_Space_Center> rdf:type owl:NamedIndividual ,
+                                                                          <http://krr.org/space_exploration.owl#Entity> ,
+                                                                          <http://krr.org/space_exploration.owl#LaunchSite> .
+
+
+###  http://krr.org/space_exploration.owl#site_Satish_Dhawan_Space_Centre
+<http://krr.org/space_exploration.owl#site_Satish_Dhawan_Space_Centre> rdf:type owl:NamedIndividual ,
+                                                                                <http://krr.org/space_exploration.owl#Entity> ,
+                                                                                <http://krr.org/space_exploration.owl#LaunchSite> .
+
+
+###  http://krr.org/space_exploration.owl#site_Wenchang
+<http://krr.org/space_exploration.owl#site_Wenchang> rdf:type owl:NamedIndividual ,
+                                                              <http://krr.org/space_exploration.owl#Entity> ,
+                                                              <http://krr.org/space_exploration.owl#LaunchSite> .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

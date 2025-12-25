@@ -1,0 +1,13 @@
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+PREFIX ex: <http://krr.org/space/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+# Query for HighBudgetMission (defined class with budget >= 1000)
+SELECT ?mission ?missionName ?budget
+WHERE {
+    ?mission rdf:type onto:HighBudgetMission .
+    ?mission onto:missionName ?missionName .
+    ?mission onto:hasBudget ?budget .
+}
+ORDER BY DESC(?budget)
+

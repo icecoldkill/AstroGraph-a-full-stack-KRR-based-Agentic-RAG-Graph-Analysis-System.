@@ -1,0 +1,30 @@
+# Sensitive Info
+.env
+.env.local
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env/
+build/
+dist/
+*.egg-info/
+
+# Frontend (Node.js)
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vscode/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Large Data (Optional to ignore if too large, but these are small)
+# graphdb-data/
+# graphdb-import/

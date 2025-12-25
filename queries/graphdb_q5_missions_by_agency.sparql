@@ -1,0 +1,9 @@
+# Competency Question 5: Count missions by agency
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+
+SELECT ?agency (COUNT(?mission) AS ?missionCount)
+WHERE {
+    ?mission onto:launchedBy ?agency .
+}
+GROUP BY ?agency
+ORDER BY DESC(?missionCount)

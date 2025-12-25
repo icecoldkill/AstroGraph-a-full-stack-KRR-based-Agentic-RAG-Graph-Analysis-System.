@@ -1,0 +1,17 @@
+version: '3'
+services:
+  webprotege:
+    image: protegeproject/webprotege:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - webprotege.mongodb.host=mongodb
+    depends_on:
+      - mongodb
+    volumes:
+      - ./data:/data/webprotege
+
+  mongodb:
+    image: mongo:4.4
+    volumes:
+      - ./mongodb:/data/db

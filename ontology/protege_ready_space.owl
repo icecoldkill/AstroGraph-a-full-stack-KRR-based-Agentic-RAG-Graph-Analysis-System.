@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns="http://krr.org/space_exploration.owl#"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+  <rdf:Description rdf:nodeID="N847adcecf0d94854b510a47cfeed773a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://krr.org/space_exploration.owl#launchedBy"/>
+    <owl:someValuesFrom rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8dcd4a3462774e6398b1e3165cd04d88">
+    <rdf:first rdf:nodeID="N12b2c291f2134e56818e7a26261073a7"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N95b58bc5b845458b8dde201d7559cd22">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://krr.org/space_exploration.owl#isSuccess"/>
+    <owl:hasValue rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#launchedFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://krr.org/space_exploration.owl#LaunchSite"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#PrivateCompany">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Agency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Failure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#LaunchStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#carriedPayload">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://krr.org/space_exploration.owl#Payload"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N60f7fade694a4f7ea5f43fb061eb350d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:nodeID="Nb5715332cfce41a5b435fdf23a5a7faf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocket_Atlas_V">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#CommercialSpaceFlight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <owl:equivalentClass rdf:nodeID="Nbfe94bd9c9654cf2a27a5cb08ca37e79"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nafcd1a28f1354a669c31530d2ae90517">
+    <rdf:first rdf:nodeID="N3e5b1b166cdf4eac8a55ca6faf343996"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#launchDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#LaunchStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:equivalentClass rdf:nodeID="N0217ad89a3e145618d501bbad9c6b557"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#hasBudget">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3e5b1b166cdf4eac8a55ca6faf343996">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://krr.org/space_exploration.owl#launchedBy"/>
+    <owl:someValuesFrom rdf:resource="http://krr.org/space_exploration.owl#PrivateCompany"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Star">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#CelestialBody"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ne21f0bba89d24a36a58666cc79b40ce8">
+    <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1000.0</xsd:minInclusive>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8015ba89ffd74b9b967ce7f6a95c987c">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <owl:withRestrictions rdf:nodeID="N0ed676d2399a4fe680f7bb9962b3acd7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_10">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beresheet</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2019-02-22</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Failure"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_SpaceIL"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Cape_Canaveral"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nad7f813ffe6848d4abee7003b2901daf">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#PartialFailure"/>
+    <rdf:rest rdf:nodeID="Nffe535bf561a4865a778064131335bac"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocket_Falcon_9">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_SpaceX"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_SpaceIL"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_6">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Voyager 1</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">250.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1977-09-05</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_NASA"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Cape_Canaveral"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N758bfd287d834559b79c7999a94468ed">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:rest rdf:nodeID="Nafcd1a28f1354a669c31530d2ae90517"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#agency_CNSA">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_7">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artemis I</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4100.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-11-16</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_NASA"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Kennedy_Space_Center"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocketStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_9">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MarsMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tianwen-1</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8000.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-07-23</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_CNSA"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Wenchang"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_3">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MarsMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mars Rover Perseverance</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2700.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-07-30</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_NASA"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Kennedy_Space_Center"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3b423a119491491aa79d24e4430e250f">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:rest rdf:nodeID="N8dcd4a3462774e6398b1e3165cd04d88"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#launchedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://krr.org/space_exploration.owl#Agency"/>
+    <owl:inverseOf rdf:resource="http://krr.org/space_exploration.owl#inverseLaunchedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#agency_ISRO">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Indian_Space_Research_Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_5">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Starlink-105</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">50.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2024-01-10</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_SpaceX"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Kennedy_Space_Center"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N46e2f6c050ee40ab885588ff6e32a819">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <rdf:rest rdf:nodeID="N0a46bb8c78eb491db3ddc07ab60ce0ee"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#LaunchSite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N647b0d2646c749478aee879a36148bea">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#PrivateCompany"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb5715332cfce41a5b435fdf23a5a7faf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://krr.org/space_exploration.owl#isSuccess"/>
+    <owl:hasValue rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nffe535bf561a4865a778064131335bac">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#Scheduled"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#SpaceTourist">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocket_Soyuz-2">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_Roscosmos"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Payload">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocket_LVM3">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_ISRO"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#HighBudgetMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <owl:equivalentClass rdf:nodeID="N4e4736b26ad54132a563288b23925142"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_4">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chandrayaan-3</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">75.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2023-07-14</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_ISRO"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Satish_Dhawan_Space_Centre"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#environmentalImpact">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_8">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Soyuz MS-24</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2023-09-15</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_Roscosmos"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Baikonur_Cosmodrome"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#FailedMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <owl:equivalentClass rdf:nodeID="N147533f869c24f9e8e9121e0b5186fbb"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Success">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#LaunchStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#NonGovernmentMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <owl:equivalentClass rdf:nodeID="N3130ee3f0bba4e32a339fb07df130332"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocket_Titan_IIIE">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#isSuccess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://krr.org/space_exploration.owl#LaunchStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N343635ab78d94fcb91dd9791845f6d94">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+    <rdf:rest rdf:nodeID="N647b0d2646c749478aee879a36148bea"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#payloadWeight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#Payload"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Entity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#refersToCountry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#Agency"/>
+    <rdfs:range rdf:resource="http://krr.org/space_exploration.owl#Country"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#SpacePort">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#LaunchSite"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#InterstellarMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#SpaceMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0217ad89a3e145618d501bbad9c6b557">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:oneOf rdf:nodeID="N46e2f6c050ee40ab885588ff6e32a819"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#missionName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nbfe94bd9c9654cf2a27a5cb08ca37e79">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N758bfd287d834559b79c7999a94468ed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#inverseLaunchedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <owl:inverseOf rdf:resource="http://krr.org/space_exploration.owl#launchedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb04a15a588c8488a8e105a4e945fc50c">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N4fe85e63f8f24adcad9c76cc3b1d7b52"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#hasAgency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <rdfs:range rdf:resource="http://krr.org/space_exploration.owl#Agency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_2">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Falcon 9 Launch</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">62.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2023-05-01</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_SpaceX"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Cape_Canaveral"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#MoonMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N147533f869c24f9e8e9121e0b5186fbb">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N36dc71c5413e45aeb20e21c07ef35d61"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#MissionSuccessStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#hasOrbit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://krr.org/space_exploration.owl#Orbit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#SuccessfulMoonMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <owl:equivalentClass rdf:nodeID="Nb04a15a588c8488a8e105a4e945fc50c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#CelestialBody">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Planet">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#CelestialBody"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#ExpendableRocket">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N8a66c02571ad49ffac2da46dd4996f70">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://krr.org/space_exploration.owl#hasAgency"/>
+    <owl:onClass rdf:resource="http://krr.org/space_exploration.owl#Agency"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#SpySatellite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Satellite"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#LowEarthOrbit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Orbit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#agency_SpaceX">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#PrivateCompany"/>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/SpaceX"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#MarsMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#agency_NASA">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#GeostationaryOrbit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Orbit"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#missionCost">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N12b2c291f2134e56818e7a26261073a7">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="http://krr.org/space_exploration.owl#hasBudget"/>
+    <owl:someValuesFrom rdf:nodeID="N8015ba89ffd74b9b967ce7f6a95c987c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4e3cc5841068406ebf2524a675cf0c57">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N343635ab78d94fcb91dd9791845f6d94"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Moon">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#CelestialBody"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Satellite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#agency_SpaceIL">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#PrivateCompany"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#GovernmentAgency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Agency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#ScientificInstrument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Payload"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#mission_1">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <missionName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Apollo 11</missionName>
+    <hasBudget rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25000.0</hasBudget>
+    <launchDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1969-07-16</launchDate>
+    <environmentalImpact rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</environmentalImpact>
+    <isSuccess rdf:resource="http://krr.org/space_exploration.owl#Success"/>
+    <launchedBy rdf:resource="http://krr.org/space_exploration.owl#agency_NASA"/>
+    <launchedFrom rdf:resource="http://krr.org/space_exploration.owl#site_Kennedy_Space_Center"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#ReusableRocket">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Orbit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocket_Long_March_5">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_CNSA"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#WeatherSatellite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Satellite"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#hasUniqueMissionID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    <rdfs:domain rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Scheduled">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#LaunchStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N9579598f56f74f8280399ddfc6d8451c">
+    <rdf:first rdf:nodeID="N60f7fade694a4f7ea5f43fb061eb350d"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4fe85e63f8f24adcad9c76cc3b1d7b52">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#MoonMission"/>
+    <rdf:rest rdf:nodeID="Nc192f48c9a4d4a3181475ede1c49eba3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#LaunchEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <owl:equivalentClass rdf:nodeID="N4e3cc5841068406ebf2524a675cf0c57"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Person">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocket_SLS">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc192f48c9a4d4a3181475ede1c49eba3">
+    <rdf:first rdf:nodeID="N95b58bc5b845458b8dde201d7559cd22"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#agency_Roscosmos">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#GovernmentAgency"/>
+    <owl:sameAs rdf:resource="http://dbpedia.org/resource/Roscosmos"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Rocket">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+    <rdfs:subClassOf rdf:nodeID="N8a66c02571ad49ffac2da46dd4996f70"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Astronaut">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc1a86086b8ee438382c2e851e8fb142a">
+    <rdf:first rdf:nodeID="N57615e9648d64b7eba7eabd96539ceae"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#CommunicationSatellite">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Satellite"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4e4736b26ad54132a563288b23925142">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N3b423a119491491aa79d24e4430e250f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#rocket_Saturn_V">
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#Rocket"/>
+    <hasAgency rdf:resource="http://krr.org/space_exploration.owl#agency_NASA"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N57615e9648d64b7eba7eabd96539ceae">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:complementOf rdf:nodeID="N847adcecf0d94854b510a47cfeed773a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N36dc71c5413e45aeb20e21c07ef35d61">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:rest rdf:nodeID="N9579598f56f74f8280399ddfc6d8451c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#UncrewedMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Continent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0ed676d2399a4fe680f7bb9962b3acd7">
+    <rdf:first rdf:nodeID="Ne21f0bba89d24a36a58666cc79b40ce8"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#CrewedMission">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0a46bb8c78eb491db3ddc07ab60ce0ee">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#Failure"/>
+    <rdf:rest rdf:nodeID="Nad7f813ffe6848d4abee7003b2901daf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#PartialFailure">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://krr.org/space_exploration.owl#LaunchStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2e681c79ea3d411cb131e376acb3cf4c">
+    <rdf:first rdf:resource="http://krr.org/space_exploration.owl#SpaceMission"/>
+    <rdf:rest rdf:nodeID="Nc1a86086b8ee438382c2e851e8fb142a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://krr.org/space_exploration.owl#Agency">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://krr.org/space_exploration.owl#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N3130ee3f0bba4e32a339fb07df130332">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:intersectionOf rdf:nodeID="N2e681c79ea3d411cb131e376acb3cf4c"/>
+  </rdf:Description>
+</rdf:RDF>

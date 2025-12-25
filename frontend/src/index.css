@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-space-950 text-white font-sans;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(88, 28, 135, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(2, 132, 199, 0.2) 0%, transparent 40%);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.glass-panel {
+  @apply bg-space-900/60 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl;
+}
+
+.nav-item {
+  @apply flex items-center gap-3 p-3 rounded-xl transition-all duration-300 relative overflow-hidden;
+}
+
+.nav-item::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-cosmos-500/20 to-starlight-400/20 opacity-0 transition-opacity duration-300;
+}
+
+.nav-item:hover::before {
+  @apply opacity-100;
+}
+
+.gradient-title {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-starlight-400 via-cosmos-300 to-pink-400 font-extrabold;
+}
+
+.chat-bubble-user {
+  @apply bg-gradient-to-br from-cosmos-900 to-cosmos-500 text-white shadow-lg shadow-cosmos-500/20 rounded-2xl rounded-tr-sm;
+}
+
+.chat-bubble-bot {
+  @apply bg-space-800 border border-white/5 shadow-lg rounded-2xl rounded-tl-sm;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0d17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}

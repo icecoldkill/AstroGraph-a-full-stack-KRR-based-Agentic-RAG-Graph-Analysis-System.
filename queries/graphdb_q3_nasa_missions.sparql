@@ -1,0 +1,12 @@
+# Competency Question 3: Find missions by specific agency (NASA)
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+
+SELECT ?missionName ?launchDate ?budget ?success
+WHERE {
+    ?mission onto:missionName ?missionName .
+    ?mission onto:launchedBy ?agency .
+    FILTER(CONTAINS(LCASE(str(?agency)), "nasa"))
+    OPTIONAL { ?mission onto:launchDate ?launchDate }
+    OPTIONAL { ?mission onto:hasBudget ?budget }
+    OPTIONAL { ?mission onto:isSuccess ?success }
+}

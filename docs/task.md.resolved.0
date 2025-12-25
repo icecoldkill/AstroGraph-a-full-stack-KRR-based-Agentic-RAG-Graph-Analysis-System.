@@ -1,0 +1,34 @@
+# Task: KRR Course Project - Global Space Exploration Knowledge Graph
+
+## M1: Domain & Dataset Selection [/]
+- [ ] Research and select a non-RDF dataset from Kaggle or similar.
+- [ ] Verify the dataset is not already published as Linked Data.
+- [ ] Define motivation and context for the selected dataset.
+- [ ] Identify potential for interlinking (DBpedia, Wikidata).
+
+## M2: Competency Questions & Conceptual Model [ ]
+- [ ] Formulate at least 5-10 competency questions.
+- [ ] Design the Conceptual Model (T-Box and A-Box examples).
+- [ ] Identify existing vocabularies to reuse (e.g., Schema.org, FOAF, DBPedia-Ontology).
+
+## M3: Ontology Design & Reasoning [ ]
+- [ ] Design the Ontology in Protege/Python (20+ classes, 7+ object properties, 7+ datatype properties).
+- [ ] Implement specific restrictions (Enumeration, Cardinality, Range, Union, Intersection, Complement).
+- [ ] Define Functional and Inverse Functional properties.
+- [ ] Perform consistency checking and reasoning.
+- [ ] Annotate at least 10 individuals.
+
+## M4: Data Conversion & Linking [ ]
+- [ ] Develop Python scripts (RDFLib) to map CSV to RDF/OWL.
+- [ ] Devise a meaningful URI mechanism.
+- [ ] Implement interlinking with DBpedia/Wikidata.
+- [ ] Publish as Linked Data (simulated or via GraphDB).
+
+## M5: Validation & Visualization [ ]
+- [ ] Execute SPARQL queries based on competency questions.
+- [ ] Visualize the RDF data (VOWL or similar).
+- [ ] Create walkthrough and final report.
+
+## Bonus [ ]
+- [ ] Implement SWRL rules.
+- [ ] Develop a simple demo application.

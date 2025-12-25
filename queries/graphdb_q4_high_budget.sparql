@@ -1,0 +1,11 @@
+# Competency Question 4: Find high-budget missions (> 1000 million)
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+
+SELECT ?missionName ?budget ?launchDate
+WHERE {
+    ?mission onto:missionName ?missionName .
+    ?mission onto:hasBudget ?budget .
+    FILTER(?budget > 1000)
+    OPTIONAL { ?mission onto:launchDate ?launchDate }
+}
+ORDER BY DESC(?budget)

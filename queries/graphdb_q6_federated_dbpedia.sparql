@@ -1,0 +1,24 @@
+# Federated Query: Link to DBpedia for NASA information
+# NOTE: This query links your local data with external DBpedia data
+PREFIX onto: <http://krr.org/space_exploration.owl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT ?missionName ?launchDate ?nasaDescription
+WHERE {
+    # Local data
+    ?mission onto:missionName ?missionName .
+    ?mission onto:launchedBy ?agency .
+    FILTER(CONTAINS(LCASE(str(?agency)), "nasa"))
+    OPTIONAL { ?mission onto:launchDate ?launchDate }
+    
+    # Federated query to DBpedia (optional - may timeout)
+    OPTIONAL {
+        SERVICE <http://dbpedia.org/sparql> {
+            dbr:NASA dbo:abstract ?nasaDescription .
+            FILTER(LANG(?nasaDescription) = "en")
+        }
+    }
+}
+LIMIT 5
